@@ -14,8 +14,19 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
+    chosenValidData(selectedDates[0]);
   },
 };
 
 flatpickr(input, options);
+
+let chosenData = Date.now();
+btnStart.disabled = true;
+
+function chosenValidData(selData) {
+    if (Date.now() > selData) { 
+        window.alert("Please choose a date in the future")
+        return
+    }
+    btnStart.disabled = false;
+};
