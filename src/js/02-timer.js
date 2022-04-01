@@ -30,11 +30,30 @@ btnStart.addEventListener('click', startTimer)
 function chosenValidDate(selData) {
     if (Date.now() > selData) { 
         Notify.warning('Please choose a date in the future');
-        return
+      return;
     }
-    btnStart.disabled = false;
+  btnStart.disabled = false;
+  chosenDate = selData;
 };
 
+
+function startTimer() {
+  btnStart.disabled = true;
+  input.disabled = true;
+  
+  timerId = setInterval(() => {
+    const outTime = chosenDate - Date.now();
+
+    const finTime = convertMs(outTime);
+    
+    if (outTime <= 0 ) {
+      clearInterval(timerId);
+      input.disabled = false;
+      return;
+  }
+     changeTimerValue(finTime); 
+  }, 1000);   
+}
 
 function changeTimerValue({ days, hours, minutes, seconds }) {
     dataDays.textContent = addLeadingZero(days);
