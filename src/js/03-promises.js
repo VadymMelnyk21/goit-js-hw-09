@@ -12,8 +12,8 @@ function submitForm(element) {
   const formAmount = parseInt(element.currentTarget.amount.value);
 
   for (let i = 1; i <= formAmount; i += 1) {
-    callStatusPromise(i, formDelay);
     formDelay += formStep;
+    callStatusPromise(i, formDelay);
   }
 }
 
