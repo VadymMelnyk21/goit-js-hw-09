@@ -29,13 +29,12 @@ btnStart.addEventListener('click', startTimer)
 
 function chosenValidDate(selData) {
     if (Date.now() > selData) { 
-        Notify.warning('Please choose a date in the future');
+        Notify.warning('Ей КАСАТІКІ, потрібно вибрати дату в майбутньому');
       return;
     }
   btnStart.disabled = false;
   chosenDate = selData;
 };
-
 
 function startTimer() {
   btnStart.disabled = true;

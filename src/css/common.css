@@ -24,7 +24,8 @@ img {
 .container-color-switcher {
   padding: 0 15px;
 }
-.box-color-switcher {
+.box-color-switcher,
+.timer-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -38,3 +39,33 @@ img {
   cursor: pointer;
 }
 /* color-switcher end */
+
+/* timer start */
+
+.timer-container {
+text-align: center;
+}
+
+.timer {
+display: flex;
+margin: -5px;
+}
+
+.field {
+margin: 5px;
+}
+
+.value {
+  display: block;
+  font-size: 42px;
+  font-weight: 500;
+  color: rgb(18, 18, 85);
+}
+
+.label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+/* timer end */
