@@ -17,14 +17,15 @@ function submitForm(element) {
   }
 }
 
-createPromise(position, delay)
-  .then(({ position, delay }) => {
-    Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-  })
-  .catch(({ position, delay }) => {
-    Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-  });
-
+function callStatusPromise(position, delay){
+  createPromise(position, delay)
+    .then(({ position, delay }) => {
+      Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+    })
+    .catch(({ position, delay }) => {
+      Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+    });
+}
 
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
